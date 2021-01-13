@@ -1,0 +1,14 @@
+<？php
+    error_reporting（）; //使用設定錯誤等級並返回當前等級的
+    $ conn = mysqli_connect（ “ localhost”， “ root”， “”， “ mydb”）; //建立資料庫連線，如果$ conn = false代表連結不成功
+    //從公告中刪除，其中bid = ???
+    $ sql = “從公告中刪除，其中bid = {$ _ GET [bid]}”；
+    // echo $ sql;
+    如果（！mysqli_query（$ conn，$ sql））
+        echo  “刪除錯誤” ;
+    其他{
+        echo  “刪除成功；回前頁中...” ;
+        迴聲 “ <meta http-equiv ='refresh'content ='3; url = bulletin.php'>” ; //上面例子會使網頁在載入3秒後，自動重新到達bulletin.php
+    }
+？>
+©2021 GitHub，Inc.
