@@ -1,0 +1,21 @@
+<？php
+    session_start（）;    //啟動會話的使用
+if（！isset（$ _SESSION [ 'id' ]））{    //檢查會話值是否存在
+    迴聲 “請登錄系統”；
+    echo  “ <元http-equiv ='refresh'content ='3; url = index.html''>” ;   //上面例子將會在網頁上載入3秒後，自動重新到達login.html
+}其他{
+    $ conn = mysqli_connect（ “ localhost”， “ root”， “”， “ mydb”）;     //建立資料庫連線，如果$ conn = false代表連結不成功
+    if（mysqli_connect_error（$ conn））     //如果連接失敗，顯示錯誤
+      die（“無法連線資料庫”）;
+    $ sql = “插入公告（標題，內容，類型，時間）值（'{$ _POST ['title']}''，'{$ _ POST ['content']}'，{$ _ POST ['type'] }，'{$ _ POST ['time']}'）“ ;
+    // echo $ sql;
+    如果（！mysqli_query（$ conn，$ sql））{
+     echo（“錯誤描述：”。mysqli_error（$ conn））;   
+    }
+    其他  
+       迴聲 “添加佈告成功”；   
+    mysqli_close（$ conn）;  //關閉數據庫連接
+    echo  “ <元http-equiv ='refresh'content ='3; url = bulletin.php''>” ;   //上面示例將網頁在載入0秒後，自動重新放置到bulletin.php
+}
+？>
+©2021 GitHub，Inc.
