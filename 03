@@ -1,0 +1,8 @@
+<？php
+
+session_start（）; //啟動會話的使用
+unset（$ _SESSION [ “ id” ]）;
+迴聲 “登出中......” ;   
+迴聲 '<meta http-equiv = REFRESH CONTENT = 2; url = login.html>' ; //上面例子將會在網頁上載入2秒後，自動重新到達login.html
+
+？>
